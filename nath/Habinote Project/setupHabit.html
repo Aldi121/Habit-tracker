@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habinote - Habit Tracker</title>
+    
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="habitStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="header-box">
+            <header>
+                <img src="logo.png" alt="Habinote Logo" class="logo">
+                <h1>Habinote</h1>
+                <nav>
+                    <div class="menu-icon">
+                        <feather-icon data-feather="menu" id="hamburger"></feather-icon>
+                    </div>
+                    <ul class="menu">
+                        <a href="#features">Features</a>
+                        <a href="#download">Download</a>
+                        <a href="#contact">Contact</a>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <section class="setup-habit">
+    <h1 class="username">Hi, Username</h1>
+    <h2>Set Up Your Habit</h2>
+            <div class="input-field">
+            <input type="text" id="habitInput" placeholder="Your Habit">
+            
+            <select id="periodSelect">
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+            </select>
+            <button type="button">Add Habit</button>
+        </div>
+        </section>
+        <footer>
+            <p>&copy; 2024 Habinote. All rights reserved.</p>
+        </footer>
+        <script src="script.js"></script>
+
+</body>
+</html>

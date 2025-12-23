@@ -1,0 +1,183 @@
+:root{
+    --size: 10px;
+    --primary-color: #37353e;
+    --secondary-color: #f97a00;
+    --bottom-color: #4e4e4e;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;   
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Header Styles */
+.logo{
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+}
+.header-box{
+    width: 100%;
+    position: fixed;
+}
+header{
+    height: 4.2rem;
+    text-align: left;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: calc(var(--size) * 2) calc(var(--size) * 4);
+    background: #f97a00;
+}
+nav{
+    text-decoration: none;
+    justify-content: space-between;
+    margin-left: auto;
+}
+nav a{
+    margin-left: calc(var(--size) * 4);
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.menu-icon{
+    display: none;
+    cursor: pointer;
+}
+/* Body Styles */
+body{
+    background-image: url('bg hero.png'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;
+}
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    padding: 0 calc(var(--size) * 4);
+    height: 100vh;
+}
+
+.hero h1 {
+    font-size: 7rem;
+    margin: 0; 
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 0.1rem 0 0 0;
+}
+/* Setup Section Styles */
+.setup{
+    height: 70vh;
+    text-align: center;
+    padding: calc(var(--size) * 6) calc(var(--size) * 4);
+    background: var(--primary-color);
+}
+.setup h2{
+    font-size: 3.5rem;
+    margin-bottom: calc(var(--size) * 2);
+}
+.setup p{
+    font-size: 1.5rem;
+    margin-bottom: calc(var(--size) * 4);
+}
+/* Style input field */
+input[type="text"] {
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+     background-color: #e66e00;
+}
+
+footer{
+    text-align: center;
+    padding: calc(var(--size) * 4);
+    background: var(--secondary-color);
+    font-size: 1rem;
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 4rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .setup h2 {
+        font-size: 2.5rem;
+    }
+    .setup p {
+        font-size: 1rem;
+    }
+    nav a {
+        display: none;
+    }
+    .menu-icon {
+        
+        display: block;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .hero h1 {
+        font-size: 5rem;
+    }
+    .hero p {
+        font-size: 1.2rem;
+    }
+    .setup h2 {
+        font-size: 3rem;
+    }
+    .setup p {
+        font-size: 1.2rem;
+    }
+    nav a {
+        margin-left: calc(var(--size) * 2);
+        font-size: 1rem;
+    }
+    .menu-icon {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero h1 {
+        font-size: 6rem;
+    }
+    .hero p {
+        font-size: 1.3rem;
+    }
+    .setup h2 {
+        font-size: 3.2rem;
+    }
+    .setup p {
+        font-size: 1.3rem;
+    }
+    nav a {
+        margin-left: calc(var(--size) * 3);
+        font-size: 1.1rem;
+    }
+    .menu-icon {
+        display: none;
+    }
+}
