@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Habit Tracker</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container py-4"
+     x-data="{
+       name: '',
+       habit: '',
+       duration: '',
+       habits: [],
+       editIndex: null
+     }">
+
+  <!-- NAVBAR (TETAP LENGKAP) -->
+  <nav class="navbar navbar-expand-lg navbar-light glass px-4">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">Habit Tracker</a>
+
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link"
+               role="button"
+               data-bs-toggle="modal"
+               data-bs-target="#habitModal"
+               @click="editIndex=null; name=''; habit=''; duration=''">
+              Habits
+            </a>
+          </li>
+
+          <!-- DROPDOWN TETAP -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+               role="button"
+               data-bs-toggle="dropdown">
+              Menu
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="Daily.html">Daily</a></li>
+              <li><a class="dropdown-item" href="Weekly.html">Weekly</a></li>
+              <li><a class="dropdown-item" href="Monthly.html">Monthly</a></li>
+              <li><a class="dropdown-item" href="Yearly.html">Yearly</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item">Settings</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+        <!-- SEARCH TETAP -->
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search habit">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- CARD LIST -->
+  <div class="row">
+    <template x-for="(item, index) in habits" :key="index">
+      <div class="col-md-4 mb-3">
+        <div class="card shadow-sm">
+          <div class="card-body">
+
+            <h5 class="card-title" x-text="item.habit"></h5>
+
+            <p class="card-text">
+              <strong>Nama:</strong> <span x-text="item.name"></span><br>
+              <strong>Durasi:</strong> <span x-text="item.duration"></span> menit
+            </p>
+
+            <div class="d-flex gap-2">
+              <!-- EDIT -->
+              <button class="btn btn-warning btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#habitModal"
+                      @click="
+                        editIndex = index;
+                        name = item.name;
+                        habit = item.habit;
+                        duration = item.duration;
+                      ">
+                Edit
+              </button>
+
+              <!-- DELETE -->
+              <button class="btn btn-danger btn-sm"
+                      @click="habits.splice(index,1)">
+                Delete
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal fade" id="habitModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title"
+              x-text="editIndex === null ? 'Tambah Habit' : 'Edit Habit'">
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Nama</label>
+            <input class="form-control" x-model="name">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Habit</label>
+            <input class="form-control" x-model="habit">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Durasi (menit)</label>
+            <input type="number" class="form-control" x-model="duration">
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-primary"
+                  @click="
+                    if (editIndex === null) {
+                      habits.push({ name, habit, duration });
+                    } else {
+                      habits[editIndex] = { name, habit, duration };
+                    }
+                    name=''; habit=''; duration='';
+                    editIndex=null;
+                  "
+                  data-bs-dismiss="modal">
+            Simpan
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</body>
+</html>
