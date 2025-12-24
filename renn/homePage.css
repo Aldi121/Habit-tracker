@@ -11,13 +11,54 @@
     list-style: none;
     color: #fff;
 }
+.navSection{
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.nav-item .nav-link{
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 20px;
+    font-weight: 500;
+    color: #ffffff;
+}
+.Nav-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+.brand{
+    display: flex;
+    align-items: center;
+    font-size: 45px;
+    font-weight: 600;
+    color:#ffffff;
+    justify-content: center;
+    margin-right: 78%;
+}
 .homePage{
+    position: relative;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0 20px;
     gap: 10px;
+}
+.homePage .dekorasi{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.8;
 }
 .homePage h1{
     font-size: calc(var(--size-1) * 6);
@@ -27,7 +68,97 @@
 }
 .homePage p{
     font-size: calc(var(--size-2) * 1.2);
-    max-width: 500px;
+    max-width: 700px;
     line-height: 1.4;
     margin-left: calc(var(--size-2) * 4);
+}
+.startButton{
+    font-family: 'Jost', sans-serif;
+    position: absolute;
+    bottom: 30px;
+    margin-left: 90px;
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
+    transition: background-color 0.3s ease;
+}
+.startButton:hover{
+    background-color: #5a67d8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px){
+    .homePage h1{
+        font-size: calc(var(--size-1) * 4);
+        margin-left: calc(var(--size-2) * 2);
+    }
+    .homePage p{
+        font-size: calc(var(--size-2) * 1);
+        margin-left: calc(var(--size-2) * 2);
+    }
+    .startButton{
+        margin-left: 40px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px){
+    .homePage h1{
+        font-size: calc(var(--size-1) * 3);
+        margin-left: calc(var(--size-2) * 1);
+    }
+    .homePage p{
+        font-size: calc(var(--size-2) * 0.9);
+        margin-left: calc(var(--size-2) * 1);
+    }
+    .startButton{
+        margin-left: 20px;
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 320px){
+    .homePage h1{
+        font-size: calc(var(--size-1) * 2.5);
+    }
+    .homePage p{
+        font-size: calc(var(--size-2) * 0.8);
+    }
+    .startButton{
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 1200px){
+    .homePage h1{
+        font-size: calc(var(--size-1) * 7);
+    }
+    .homePage p{
+        font-size: calc(var(--size-2) * 1.5);
+    }
+    .startButton{
+        padding: 14px 28px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1600px){
+    .homePage h1{
+        font-size: calc(var(--size-1) * 8);
+    }
+    .homePage p{
+        font-size: calc(var(--size-2) * 1.8);
+    }
+    .startButton{
+        padding: 16px 32px;
+        font-size: 22px;
+    }
 }

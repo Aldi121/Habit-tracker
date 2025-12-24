@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Habit Tracker</title>
+  <link rel="icon" href="Logo.png" type="image/x-icon">
   <link rel="stylesheet" href="homePage.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,56 +16,30 @@
   <style>
     body {
       min-height: 100vh;
-      background: linear-gradient(135deg, #667eea, #764ba2);
+      background: linear-gradient(135deg, #764ba2, #667eea);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .glass {
-      background: rgba(255, 255, 255, 0.75);
+      background: rgba(102, 29, 185, 0.5);
       backdrop-filter: blur(12px);
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0,0,0,.15);
-    }
-
-    /* === TAMBAHAN PROFIL USER === */
-    .user-profile {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-right: 16px;
-    }
-
-    .user-avatar {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background-color: #667eea;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 16px;
     }
   </style>
 </head>
 
 <body>
 
-
+<section class="navSection">
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-light glass px-4">
     <div class="container-fluid">
 
-      <!-- 🔹 PROFIL USER (POJOK KIRI ATAS) -->
-      <div class="user-profile">
-        <div class="user-avatar">A</div>
-        <span class="fw-semibold">admin</span>
-      </div>
-
       <!-- BRAND -->
-      <a class="navbar-brand" href="#">Habinote</a>
-
+        <img src="Logo.png" alt="Logo" width="30" height="30" class="Nav-logo">
+        <h1 class="brand">Habinote</h1>
+      </div>
       <button class="navbar-toggler" type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent">
@@ -81,45 +56,35 @@
 
           <li class="nav-item">
             <a class="nav-link" href="habit.html">
-              Habits
+              Contact
             </a>
           </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"
-               role="button"
-               data-bs-toggle="dropdown">
-              Tracker
+          <li class="nav-item">
+            <a class="nav-link" href="habit.html">
+              About
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="Daily.html">Daily</a></li>
-              <li><a class="dropdown-item" href="Weekly.html">Weekly</a></li>
-              <li><a class="dropdown-item" href="Monthly.html">Monthly</a></li>
-              <li><a class="dropdown-item" href="Yearly.html">Yearly</a></li>
-              <li><hr class="dropdown-divider"></li>
-            </ul>
           </li>
-              <li class="nav-item"><a class="nav-link" href="settings.html">Settings</a></li>
 
         </ul>
-
-        <!-- SEARCH -->
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search habit">
-          <button class="btn btn-primary" type="submit">Search</button>
-        </form>
-
-      </div>
-    </div>
   </nav>
+</section>
 <!-- HOME PAGE CONTENT -->
-<section class="homePage">
+<section class="homePage" id="homePage">
+  <img src="dekorasi.png" alt="dekorasi" class="dekorasi">
   <h1>Habinote</h1>
   <p>Welcome to Habinote, your personal habit tracker designed to help you build and maintain positive habits effortlessly. Stay organized, motivated, and on track with Habinote!</p>
 </section>
+
+<button type="button" onclick="topFunction()" id="getStarted" class="startButton">Get Started</button>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </body>
+<footer>
+  <div class="text-center p-4 glass" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2025 Habinote. All rights reserved.
+  </div>
 </html>
