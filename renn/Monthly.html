@@ -5,12 +5,16 @@
 <title>Monthly Progress</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet">
 
 <style>
 body{
   min-height:100vh;
   background:linear-gradient(135deg,#667eea,#764ba2);
-  font-family:'Segoe UI',Tahoma;
+  font-family:'jost', sans-serif;
 }
 .glass{
   background:rgba(255,255,255,.75);
@@ -19,6 +23,14 @@ body{
   box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 .navbar{position:relative;z-index:1050;}
+
+.footer{
+  
+    color: #fff;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
 </style>
 </head>
 
@@ -98,4 +110,8 @@ new Chart(document.getElementById('durationMonthly'),{
 </script>
 
 </body>
+<footer class="footer">
+  <div class="text-center p-4 glass" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 Habinote. All rights reserved.
+  </div>
 </html>
